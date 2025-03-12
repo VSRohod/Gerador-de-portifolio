@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFÓLIO</title>
+    <style>
+        /* 
+        
+        Variaveis das imagems 
+        
+        */
+        :root {
+            --imagem1: url("<img src="https://1drv.ms/i/c/d5c59eed39226d92/IQKSbSI57Z7FIIDV6kkAAAAAANXoX0iABLKiZVEAAAAAAAA?width=1280&height=855" width="1280" height="855" />");
+            --imagem2: url(<img src="https://1drv.ms/i/c/d5c59eed39226d92/IQKSbSI57Z7FIIDV6kkAAAAAANXoX0iABLKiZVEAAAAAAAA?width=1280&height=855" width="1280" height="855" />);
+        }
+
+
+        ::-webkit-scrollbar {
+            background: rgb(255, 255, 255);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        body, html {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 190vh;
+            font-family: sans-serif;
+        }
+
+        header {
+            border-top: 1px solid;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 1);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 15%;
+            width: 100%;
+            border-bottom: 1px solid;
+            position: fixed;
+            z-index: 12;
+        }
+
+        @keyframes fade-in {
+
+            0% {
+                opacity: 0%;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+
+        }
+
+        @keyframes fade-out {
+
+            0% {
+                opacity: 100%;
+            }
+
+            100% {
+                opacity: 0%;
+            }
+
+        }
+
+        #welcome-screen {
+            height: 105vh;
+            width: 100%;
+            background-image: var(--imagem1);
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #welcome-text {
+            color: white;
+            padding: 15px;
+            width: 35%;
+            position: absolute;
+            margin-top: 125px;
+            z-index: 2;
+            text-align: center;
+        }
+
+        #welcome-text > #title {
+
+            width: 100%;
+            font-size: 25px;
+            font-weight: bolder;
+            font-style: italic;
+        }
+
+        #welcome-text > p {
+            line-height: 20px;
+        }
+
+        .square {
+            width: 65vh;
+            height: 65vh;
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 25.5vh;
+            margin-left: auto;
+            margin-right: auto;
+            transform: rotate(45deg);
+            z-index: 1;
+            border: 1px solid black;
+        }
+
+        @keyframes up-title {
+            0% {
+                transform: translateY(0px) translateX(0px);
+            }
+
+            100% {
+                transform: translateY(-75px) translateX(315px);
+            }
+        }
+
+        @keyframes down-title {
+            0% {
+                transform: translateY(-75px) translateX(315px);
+            }
+            100% {
+                transform: translateY(0px) translateX(0px);
+            }
+        }
+
+        @keyframes down-bar {
+            0% {
+                height: 5vh;
+            }
+            100% {
+                height: 0vh;
+            }
+        }
+
+        @keyframes up-bar {
+            0% {
+                height: 0vh;
+            }
+            100% {
+                height: 5vh;
+            }
+        }
+
+        #infos-screen {
+
+            background-image: var(--imagem2);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 85vh;
+            width: 100%;
+            overflow: visible;
+        }
+        main {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 35% 65%;
+            overflow: hidden;
+        }
+        .logo {
+            height: 100px;
+        }
+
+        .logo > img {
+            width: auto;
+            height: 100%;
+        }
+
+        .main-title {
+            background: rgba(255,255,255,1);
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            height: 5vh;
+            z-index: 13;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .main-title > h2 {
+            z-index: 13;
+            margin: 0px;
+            margin-left: 80px;
+            transform: translateY(0px) translateX(0px);
+        }
+
+        .header-content{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+        }
+
+        .header-content > *{
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .main-infos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            backdrop-filter: blur(10px) brightness(40%);
+            font-size: 20px;
+            height: 101%;
+        }
+
+        table {
+            height: fit-content;
+            padding: 5px;
+        }
+
+        th, td {
+            font-family: sans-serif;
+            padding: 10px;
+            border-bottom: 1px solid;
+        }
+
+        th {
+            position: relative;
+            right: -5px;
+        }
+
+        td {
+            margin-left: 50px;
+            max-width: 500px;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .main-desc {
+            border-left: 1px black solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .desc {
+            width: 650px;
+            padding: 40px;
+            border: 1px solid rgba(0,0,0, 0.8);
+            border-radius: 25px;
+            font-family: sans-serif;
+            line-height: 23px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background-color: rgba(0,0,0,.6);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section class="header-content">
+            <div class="logo">
+                <img src="https://sjc04pap001files.storage.live.com/y4mKWGgnVMrAGA0vo0LzL2Ac0iAzoIVNz4nikBA_KlWoHIJHE_ukOG5sST43XTlUOMh7zkGf0JQTIrYXwlakPp1NldXjwo0iqDbnXTh7PcihkvaHBulaGgVNQMnIkV5xcXMh8bhokgFOMbD1SzrRKkV3oR96JeBBs56Ro8RsXaIGuX4Wkc-ufEJrTzfZc_W8HVH?width=1360&height=560&cropmode=none" alt="">
+            </div>
+            <h2>
+                Cursos e certificações
+            </h2>
+        </section>
+    </header>
+    <section id="welcome-screen"> 
+        <div id="welcome-text">
+            <span id="title">Quem somos nós?</span>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt adipisci laborum ea, repudiandae enim quasi. Dicta eius odio, excepturi commodi, dolore eveniet ipsum magnam obcaecati dignissimos, dolorum quibusdam iure ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere suscipit sed dignissimos fuga fugiat aliquid quis natus autem quo laudantium enim cumque quas ea, exercitationem distinctio temporibus possimus! Architecto, reiciendis?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus eius, nobis magni saepe asperiores numquam neque laboriosam laborum officiis obcaecati vel, porro doloremque repellat illo ipsum. Expedita quasi ex sit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsam illum rem, praesentium quasi nemo, doloremque tempora blanditiis inventore exercitationem officiis distinctio dignissimos quam dolorum sint delectus aspernatur vero odio.
+            </p>
+        </div>
+        <div class="square">
+
+
+        </div>
+        
+
+    </section>
+    <div class="main-title">
+        <h2>
+            Nome do curso: @{outputs('Obter_item')?['body/Title']}
+        </h2>
+    </div>
+    <section id="infos-screen">
+        <main>
+            <section class="main-infos">
+                <table>
+                    <tr>
+                        <th>
+                            Curso
+                        </th>
+                        <td>
+                            @{outputs('Obter_item')?['body/Title']}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Eixo Tecnologico
+                        </th>
+                        <td>
+                            @{outputs('Obter_item')?['body/EixoTecnol_x00f3_gico/Value']}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Carga horaria
+                        </th>
+                        <td>
+                            @{outputs('Obter_item')?['body/CargaHoraria']}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Metodologia
+                        </th>
+                        <td>
+                            @{outputs('Obter_item')?['body/Metodologia/Value']}
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="main-desc">
+                
+                <div class="desc">
+                    @{outputs('Obter_item')?['body/ObjetivoGeral']}
+                    <!-- Descrição aqui -->
+
+                </div>
+            </section>
+        </main>
+    </section>
+    <script>
+        var already = false;
+        var state = "normal";
+        document.addEventListener("scroll", (event) => {
+            if(this.scrollY >= 880){
+                already=true;
+                if(state == "normal"){
+                    console.log(state)
+                    state="notnormal";
+                    document.querySelectorAll(".main-title > h2")[0].setAttribute("style", "animation: .15s forwards up-title");
+                    document.querySelectorAll(".header-content > h2")[0].setAttribute("style","animation: .15s forwards fade-out")
+                    document.getElementsByClassName("main-title")[0].setAttribute("style","animation: .1s forwards down-bar; border: none;")}
+            } else {
+                if(state=="notnormal"){
+                    state="normal";
+                    document.getElementsByClassName("main-title")[0].removeAttribute("style");
+                    document.getElementsByTagName("header")[0].removeAttribute("style");
+                    if(already==true){
+                        document.querySelectorAll(".main-title > h2")[0].setAttribute("style", "animation: .15s forwards down-title");
+                        document.querySelectorAll(".header-content > h2")[0].setAttribute("style", "animation: .15s forwards fade-in");
+                        document.getElementsByClassName("main-title")[0].setAttribute("style","animation: .1s forwards up-bar;")
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>@{outputs('Obter_item')?['body/Metodologia']}
