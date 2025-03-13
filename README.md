@@ -2,7 +2,6 @@
 Gerador de portifólio para o SENAI
 
 # LINKS PARA AS IMAGENS 
-***
 ### LOGO
 https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/refs/heads/main/assets/images/logo/thumbnail_SENAI_Port_com_assinatura_negativa.png
 
@@ -17,3 +16,10 @@ https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/refs/heads/main/
 
 ### BANNER SOBRE CURSOS
 https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/refs/heads/main/assets/images/banner/curso.jpg
+
+# LINKS PARA FONTES
+### NEO SANS PRO BLACK
+https://github.com/VSRohod/Gerador-de-portifolio/raw/refs/heads/main/assets/fonts/neo-sans-pro/NeoSansProBlack.OTF
+
+### NEO SANS PRO BLACK IT
+https://github.com/VSRohod/Gerador-de-portifolio/raw/refs/heads/main/assets/fonts/neo-sans-pro/NeoSansProBlackIt.OTF
