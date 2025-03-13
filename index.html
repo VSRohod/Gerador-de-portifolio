@@ -12,15 +12,12 @@
     :root{
         --primario : #164194 ;
         --light : #f8f8f8;
+        --pretoTransparente: rgba(0, 0, 0, 0.63);
     }
 
     /* classe para a cor da fonte primaria */
     .textoPrimario{
-        color: var(--primario);
-    }
-
-    main{
-        background-color: var(--light) ;
+        color: var(--light);
     }
 
     header,footer{
@@ -31,6 +28,34 @@
     #logo{
         width: 16rem;
     }
+
+    /* main */
+    main{
+        background-color: var(--light) ;
+    }
+
+    /* banner config */
+    .banner{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        justify-content: center;
+        height: 14rem;
+    }
+
+    .bannerEfeito{
+        background-color: var(--pretoTransparente);
+    }
+
+    #bannerSobreNos{
+        background-image: url(assets/images/banner/escola.jpg);
+    }
+
+    #bannerCursos{
+        background-image: url(assets/images/banner/curso.jpg);
+    }
+
 </style>
 
 
@@ -46,21 +71,45 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" href="#sobreNos">Quem somos?</a>
-                        <a class="nav-link active" href="#curso">Sobre o curso</a>
+                        <a class="nav-link active" href="#bannerSobreNos">Quem somos?</a>
+                        <a class="nav-link active" href="#bannerCursos">Sobre o curso</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="d-flex flex-column align-items-center gap-3">
         <!-- SEÇÃO SOBRE SENAI -->
-        <section id="sobreNos" class="container-fluid d-flex flex-column align-items-center justify-content-center p-0 vh-100 bg-dark">
-            <h1 class="text-light">Hello World</h1>
+        <section class="container-fluid d-flex flex-column align-items-center justify-content-center p-0">
+            <!-- BANNER SESSÃO SENAI -->
+            <div id="bannerSobreNos" class="banner container-fluid shadow my-3 p-0 bg-light">
+                <div class="bannerEfeito h-100 d-flex align-items-center justify-content-center">
+                    <h1 class="textoPrimario">QUEM É O SENAI</h1>
+                </div>
+            </div>
+
+            <!-- TEXTO SOBRE SENAI -->
+            <div class="container shadow rounded p-3 m-3 bg-light">
+                <p>O Serviço Nacional de Aprendizagem Industrial (SENAI) é uma das maiores instituições de educação profissional e tecnologia da América Latina. Fundado em 1942, o SENAI tem como missão promover a inovação e a qualificação profissional para a indústria brasileira, contribuindo para o desenvolvimento econômico e social do país.</p>
+                <p>Com unidades em todo o Brasil, oferecemos cursos técnicos, de aperfeiçoamento, graduação e pós-graduação, além de serviços de tecnologia e inovação para empresas de diversos setores. Nosso compromisso é formar profissionais altamente capacitados, conectados com as demandas do mercado de trabalho e preparados para os desafios da Indústria 4.0.</p>
+                <p>No SENAI, acreditamos que a educação transforma vidas e impulsiona o crescimento da indústria. Por isso, investimos constantemente em infraestrutura, tecnologia e metodologias de ensino inovadoras, garantindo um aprendizado de qualidade e alinhado às tendências do setor produtivo.</p>
+                <p>Junte-se a nós e faça parte dessa revolução no conhecimento e na tecnologia!</p>
+
+                <img class="w-75 d-block mx-auto rounded" src="assets/images/fotos/senai taguatinga.png" alt="">
+            </div>
         </section>
+        
+
         <!-- SEÇÃO SOBRE CURSO -->
         <section id="curso" class="container-fluid d-flex flex-column align-items-center justify-content-center p-0">
+            <!-- BANNER CURSOS -->
+            <div id="bannerCursos" class="banner container-fluid shadow my-3 p-0  bg-light">
+                <div class="bannerEfeito h-100 d-flex align-items-center justify-content-center">
+                    <h1 class="textoPrimario">CURSOS E CERTIFICAÇÕES</h1>
+                </div>
+            </div>
+            
             <h1><span class="textoPrimario">CURSO</span></h1>
             
             <!-- INFOS SOBRE O CURSO -->
