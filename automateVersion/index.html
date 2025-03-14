@@ -6,31 +6,28 @@
     <title>SENAI</title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/refs/heads/main/assets/images/logo/thumbnail_icone.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://fonts.cdnfonts.com/css/neo-sans-pro" rel="stylesheet">
 </head>
 <style>
-    /* fontes */
-    @font-face {
-        font-family: 'NeoSansPROITBLK';
-        src: url(https://github.com/VSRohod/Gerador-de-portifolio/raw/refs/heads/main/assets/fonts/neo-sans-pro/NeoSansProBlackIt.OTF);
-    }
-
-    /* fontes */
-    @font-face {
-        font-family: 'NeoSansPROBLK';
-        src: url(https://github.com/VSRohod/Gerador-de-portifolio/raw/refs/heads/main/assets/fonts/neo-sans-pro/NeoSansProBlack.OTF);
-    }
-
     /* configurações gerais */
+    *{
+        hyphens: auto;
+    }
+
     :root{
-        --fontePrimaria : 'NeoSansPROBLK' ;
-        --fontePrimariaItalico : 'NeoSansPROITBLK' ;
+        --fontePrimaria : 'Neo Sans Pro' ;
         --azulEscuro : #164194 ;
         --azulClaro : #008BD2 ;
         --verdeAgua : #6CC2BA ;
         --verde : #52AE32 ;
         --laranja : #E84910 ;
         --light : #f8f8f8;
+        --transparente: #e5080800 ; 
         --pretoTransparente: rgba(0, 0, 0, 0.705);
+    }
+
+    body{
+        background-color: var(--light) ;
     }
 
     li::marker {
@@ -41,6 +38,7 @@
     .textoPrimario{
         color: var(--azulEscuro);
         font-family: var(--fontePrimaria);
+        font-weight: bold;
 
     }
 
@@ -60,16 +58,19 @@
 
     /* header e footer */
 
-    header,footer{
-        background-color: var(--azulEscuro);
-    }
-
     header{
         font-weight: bold;
+        background-image: url(https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/refs/heads/main/assets/images/header/headerBg.png);
+        background-size: 100% 100%;
     }
 
     footer{
+        background-color: var(--azulEscuro);
         font-family: var(--fontePrimariaItalico);
+    }
+
+    footer img{
+        width: 12rem;
     }
 
     #logo{
@@ -82,7 +83,6 @@
 
     /* main */
     main{
-        background-color: var(--light) ;
         text-align: justify;
     }
 
@@ -112,6 +112,11 @@
         background-image: url(https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/refs/heads/main/assets/images/banner/curso.jpg);
     }
 
+    #bannerInfraestrutura{
+        background-image: url(https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/refs/heads/main/assets/images/banner/sala.jpg);
+
+    }
+
 </style>
 
 
@@ -135,6 +140,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#bannerCursos">Cursos e certificações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#bannerInfraestrutura">Infraestrutura</a>
                     </li>
                 </ul>
               </div>
@@ -175,11 +183,11 @@
                 </div>
             </div>
             
-            <section class="container row my-3">
+            <section class="container row my-3 p-0">
                 <!-- COMPONENTE PARA CADA CURSO -->
                 <section class="curso col-6 container d-flex flex-column w-50 m-0 p-3 ps-0">
                     <!-- NOME DO CURSO -->
-                    <h1><span class="textoPrimario">@{outputs('Obter_item')?['body/Title']}</span></h1>
+                    <h2><span class="textoPrimario">CURSO</span></h2>
                     <!-- BOTÃO DO CURSO -->
                     <button class="btn corBotao botaoCurso" type="button" data-bs-toggle="collapse" data-bs-target="#id1" aria-expanded="false" aria-controls="collapseExample">
                         VER SOBRE
@@ -188,34 +196,34 @@
                     <div class="collapse" id="id1">
                         <div class="container shadow rounded my-3 p-5 bg-light d-flex flex-column flex-md-column flex-lg-row justify-content-between gap-sm-2 gap-md-2 gap-lg-0">
                             <aside class="w-100 w-md-50 w-lg-50 d-flex flex-column justify-content-center">
-                                <div id="todasInfos" class="d-flex flex-column gap-2">
-                                    <ul>
+                                <div id="todasInfos" class="container-fluid p-0 m-0 flex-column gap-2">
+                                    <ul class="w-100">
                                         <li>
                                             <!-- Curso -->
-                                            <div class="informacaoCurso d-flex gap-3">
+                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
                                                 <h6>Curso : </h6>
-                                                <h6><span>@{outputs('Obter_item')?['body/Title']}</span></h6>
+                                                <h6><span>#</span></h6>
                                             </div>  
                                         </li>
                                         <li>
                                             <!-- Eixo Tecnologico -->
-                                            <div class="informacaoCurso d-flex gap-3">
+                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
                                                 <h6>Eixo Tecnologico : </h6>
-                                                <h6><span>@{outputs('Obter_item')?['body/EixoTecnol_x00f3_gico/Value']}</span></h6>
+                                                <h6><span>#</span></h6>
                                             </div>  
                                         </li>
                                         <li>
                                             <!-- Carga horaria -->
-                                            <div class="informacaoCurso d-flex gap-3">
+                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
                                                 <h6>Carga horaria  : </h6>
-                                                <h6><span>@{outputs('Obter_item')?['body/CargaHoraria']}</span> h</h6>
+                                                <h6><span>#</span> h</h6>
                                             </div> 
                                         </li>
                                         <li>
                                             <!-- Metodologia -->
-                                            <div class="informacaoCurso d-flex gap-3">
+                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
                                                 <h6>Metodologia  : </h6>
-                                                <h6><span>@{outputs('Obter_item')?['body/ObjetivoGeral']}</span></h6>
+                                                <h6><span>#</span></h6>
                                             </div>   
                                         </li>
                                     </ul>
@@ -230,10 +238,61 @@
                 </section>
             </section>
         </section>
+
+         <!-- SEÇÃO SOBRE INSFRAESTRUTURA -->
+         <section class="container d-flex flex-column align-items-center justify-content-center p-0">
+            <div class="container p-0">  
+                <!-- BANNER INSFRAESTRUTURA -->
+                    <div id="bannerInfraestrutura" class="banner container-fluid rounded shadow mt-3 mb-5 p-0 bg-light">
+                        <div class="bannerEfeito h-100 d-flex align-items-end rounded px-5 py-3">
+                            <h1 class="textoBanner">INFRAESTRUTURA</h1>
+                        </div>
+                    </div>
+
+                    <section id="componentesInsfraestrutura" class="container-fluid p-0 gap-3 d-flex flex-column justify-content-between">
+                        <!-- COMPONENTE PARA CADA INFRAESTRUTURA -->
+                        <div class="container p-0">
+                            <h2 class="textoPrimario">LABORATÓRIOS</h2>
+                            <!-- INFOS -->
+                            <div class="container justify-content-between d-flex flex-column-reverse flex-md-column-reverse flex-lg-row p-0 py-2 m-0">
+                                <aside class="w-100 w-md-50 w-lg-50 me-5">
+                                    <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column flex-md-row flex-lg-row">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus perspiciatis delectus quia consequuntur saepe maxime quos corrupti beatae. Quam ut recusandae quibusdam repudiandae blanditiis. Ipsum suscipit nemo illo ratione consequuntur!</p>
+                                    </div>
+                                </aside>
+                               
+                                <aside class="w-100 w-md-50 w-lg-50 d-flex align-items-center">
+                                    <div class="w-100 m-0 p-0 ms-1">
+                                        <img class="w-100" src="https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/934c7d02b89f61f708ec73ae98e0f8804021fdaf/assets/images/fotos/lab.svg" alt="">
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                         <!-- COMPONENTE PARA CADA INFRAESTRUTURA -->
+                         <div class="container p-0">
+                            <!-- INFOS -->
+                            <div class="container justify-content-between d-flex flex-column-reverse flex-md-column-reverse flex-lg-row p-0 py-2 m-0">
+                                
+                                <aside class="w-100 w-md-50 w-lg-50 d-flex align-items-center">
+                                    <div class="w-100 m-0 p-0 me-1">
+                                        <img class="w-100" src="https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/934c7d02b89f61f708ec73ae98e0f8804021fdaf/assets/images/fotos/lab2.svg" alt="">
+                                    </div>
+                                </aside>
+                            
+                                <aside class="w-100 w-md-50 w-lg-50 ms-5">
+                                    <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column flex-md-row flex-lg-row">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus perspiciatis delectus quia consequuntur saepe maxime quos corrupti beatae. Quam ut recusandae quibusdam repudiandae blanditiis. Ipsum suscipit nemo illo ratione consequuntur!</p>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </section>
+            </div>
+        </section>
     </main>
 
     <footer class="container-fluid text-light d-flex flex-direction flex-column align-items-center p-3">
-        <h5>SENAI 2025</h5>
+        <img src="https://raw.githubusercontent.com/VSRohod/Gerador-de-portifolio/934c7d02b89f61f708ec73ae98e0f8804021fdaf/assets/images/logo/SENAI_sem_assinatura_negativa.svg" alt="">
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
