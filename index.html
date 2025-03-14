@@ -12,6 +12,7 @@
     /* configurações gerais */
     *{
         hyphens: auto;
+        text-align: start;
     }
 
     :root{
@@ -117,15 +118,29 @@
 
     }
 
+    /* bootstrap */
+
+    .sticky-top{
+        top: -2px!important;
+    }
+
+    @media screen and (max-width :1600px) {
+        header{
+            font-weight: bold;
+            background-image: none;
+            background-color: var(--azulEscuro);
+    }
+    }
+
 </style>
 
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark py-4">
             <div id="linksAlinhamento" class="container">
               <a class="navbar-brand" href="#">
-                <img id="logo" src="assets/images/logo/thumbnail_SENAI_Port_com_assinatura_negativa.png" alt="">
+                <img id="logo" src="assets/images/logo/logo_SENAI_negativa.png" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -187,7 +202,7 @@
                 <!-- COMPONENTE PARA CADA CURSO -->
                 <section class="curso col-6 container d-flex flex-column w-50 m-0 p-3 ps-0">
                     <!-- NOME DO CURSO -->
-                    <h2><span class="textoPrimario">CURSO</span></h2>
+                    <h2><span class="textoPrimario">#title</span></h2>
                     <!-- BOTÃO DO CURSO -->
                     <button class="btn corBotao botaoCurso" type="button" data-bs-toggle="collapse" data-bs-target="#id1" aria-expanded="false" aria-controls="collapseExample">
                         VER SOBRE
@@ -202,28 +217,28 @@
                                             <!-- Curso -->
                                             <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
                                                 <h6>Curso : </h6>
-                                                <h6><span>#</span></h6>
+                                                <p><span>#title</span></p>
                                             </div>  
                                         </li>
                                         <li>
                                             <!-- Eixo Tecnologico -->
                                             <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
                                                 <h6>Eixo Tecnologico : </h6>
-                                                <h6><span>#</span></h6>
+                                                <p><span>#eixoTecnologicoValue</span></p>
                                             </div>  
                                         </li>
                                         <li>
                                             <!-- Carga horaria -->
                                             <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
                                                 <h6>Carga horaria  : </h6>
-                                                <h6><span>#</span> h</h6>
+                                                <p><span>#cargaHoraria</span> h</p>
                                             </div> 
                                         </li>
                                         <li>
                                             <!-- Metodologia -->
                                             <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
                                                 <h6>Metodologia  : </h6>
-                                                <h6><span>#</span></h6>
+                                                <p><span>#formato</span></p>
                                             </div>   
                                         </li>
                                     </ul>
@@ -231,7 +246,7 @@
                             </aside>
                             <!-- SOBRE O CURSO -->
                             <aside class="w-100 w-md-50 w-lg-50 d-flex flex-column justify-content-center align-items-center">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae animi perferendis voluptatem sequi inventore in! Molestias dicta blanditiis delectus tempora vitae cumque, asperiores ullam sapiente ducimus ut ratione eveniet quasi.</p>
+                                <p>#objetivoGeral</p>
                             </aside>
                         </div>
                     </div>
@@ -240,7 +255,7 @@
         </section>
 
          <!-- SEÇÃO SOBRE INSFRAESTRUTURA -->
-         <section class="container d-flex flex-column align-items-center justify-content-center p-0">
+         <section class="container d-flex flex-column align-items-center justify-content-center p-0 my-3">
             <div class="container p-0">  
                 <!-- BANNER INSFRAESTRUTURA -->
                     <div id="bannerInfraestrutura" class="banner container-fluid rounded shadow mt-3 mb-5 p-0 bg-light">
@@ -254,7 +269,7 @@
                         <div class="container p-0">
                             <h2 class="textoPrimario">LABORATÓRIOS</h2>
                             <!-- INFOS -->
-                            <div class="container justify-content-between d-flex flex-column-reverse flex-md-column-reverse flex-lg-row p-0 py-2 m-0">
+                            <div class="container justify-content-between d-flex flex-column-reverse flex-md-column-reverse flex-lg-row gap-4 gap-md-0 gap-lg-0 p-0 py-2 m-0">
                                 <aside class="w-100 w-md-50 w-lg-50 me-5">
                                     <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column flex-md-row flex-lg-row">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus perspiciatis delectus quia consequuntur saepe maxime quos corrupti beatae. Quam ut recusandae quibusdam repudiandae blanditiis. Ipsum suscipit nemo illo ratione consequuntur!</p>
@@ -271,7 +286,7 @@
                          <!-- COMPONENTE PARA CADA INFRAESTRUTURA -->
                          <div class="container p-0">
                             <!-- INFOS -->
-                            <div class="container justify-content-between d-flex flex-column-reverse flex-md-column-reverse flex-lg-row p-0 py-2 m-0">
+                            <div class="container justify-content-between d-flex flex-column flex-md-column flex-lg-row p-0 py-2 m-0 gap-4 gap-md-0 gap-lg-0 ">
                                 
                                 <aside class="w-100 w-md-50 w-lg-50 d-flex align-items-center">
                                     <div class="w-100 m-0 p-0 me-1">
@@ -279,7 +294,7 @@
                                     </div>
                                 </aside>
                             
-                                <aside class="w-100 w-md-50 w-lg-50 ms-5">
+                                <aside class="w-100 w-md-50 w-lg-50 ms-0 ms-md-5 ms-lg-5">
                                     <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column flex-md-row flex-lg-row">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus perspiciatis delectus quia consequuntur saepe maxime quos corrupti beatae. Quam ut recusandae quibusdam repudiandae blanditiis. Ipsum suscipit nemo illo ratione consequuntur!</p>
                                     </div>
