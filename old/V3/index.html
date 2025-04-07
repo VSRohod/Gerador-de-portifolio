@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAI</title>
+    <link rel="shortcut icon" href="assets/images/logo/thumbnail_icone.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://fonts.cdnfonts.com/css/neo-sans-pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    /* configurações gerais */
+    *{
+        hyphens: auto;
+        text-align: start;
+    }
+
+    :root{
+        --fontePrimaria : 'Neo Sans Pro' ;
+        --azulEscuro : #164194 ;
+        --azulClaro : #008BD2 ;
+        --verdeAgua : #6CC2BA ;
+        --verde : #52AE32 ;
+        --laranja : #E84910 ;
+        --light : #f8f8f8;
+        --transparente: #e5080800 ; 
+        --pretoTransparente: rgba(0, 0, 0, 0.705);
+    }
+
+    body{
+        background-color: var(--light) ;
+    }
+
+    li::marker {
+        color: var(--laranja);
+    }
+
+    ul{
+        list-style: square;
+    }
+
+    .collapse>.card-body{
+        background-color: var(--transparente);
+    }
+
+    /* classe para a cor da fonte primaria */
+    .textoPrimario{
+        color: var(--azulEscuro);
+        font-family: var(--fontePrimaria);
+        font-weight: bold;
+
+    }
+    
+    .btnCurso{
+        font-weight: bold;
+        border: 2px solid var(--azulEscuro);
+        color: var(--azulEscuro);
+        border-radius: 1rem;
+    }
+
+    .bgButtonPrimario{
+        width: 14rem;
+        background-color: var(--azulEscuro);
+        color: var(--light);
+    }
+
+    .bgButtonPrimario:hover{
+        background-color: var(--light);
+        color: var(--azulEscuro);
+        border: 1px solid var(--azulEscuro);
+    }
+
+    .btnCurso:hover{
+        background-color: var(--azulEscuro);
+        color: var(--light);
+    }
+
+    .textoBanner{
+        color: var(--light);
+    }
+
+    .informacaoCurso>h6, .informacaoCurso>p{
+        color: var(--azulEscuro);
+    }
+
+    .informacaoCurso>p{
+        font-weight: bold;
+    }
+
+    .border-end{
+        border-color: var(--azulEscuro)!important;
+    }
+
+    /* header e footer */
+
+    header{
+        font-weight: bold;
+        background-image: url(assets/images/header/headerBg.png);
+        background-size: 100% 100%;
+    }
+
+    footer{
+        background-color: var(--azulEscuro);
+        font-family: var(--fontePrimariaItalico);
+    }
+
+    footer p{
+        font-size: 12px;
+    }
+
+    footer i{
+        font-size: 18px;
+    }
+
+    footer img{
+        width: 12rem;
+    }
+
+    #logo{
+        width: 16rem;
+    }
+
+    #linksAlinhamento{
+        align-items: end;
+    }
+
+    /* main */
+    main{
+        text-align: justify;
+    }
+
+    /* banner config */
+    .banner{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        justify-content: center;
+        height: 14rem;
+    }
+
+    .bannerEfeito{
+        background-color: var(--pretoTransparente);
+    }
+
+    #bannerSobreNos{
+        background-image: url(assets/images/banner/escola.jpg);
+    }
+
+    #bannerCursos{
+        background-image: url(assets/images/banner/curso.jpg);
+    }
+
+    #bannerInfraestrutura{
+        background-image: url(assets/images/banner/sala.jpg);
+
+    }
+
+    /* bootstrap */
+
+    .sticky-top{
+        top: -2px!important;
+    }
+
+    @media screen and (max-width :1600px) {
+        header{
+            font-weight: bold;
+            background-image: none;
+            background-color: var(--azulEscuro);
+    }
+    }
+
+    /* js */
+    .dropClose{
+        border-radius: 10px 10px 100px 10px;
+        transition: 0.3s;
+    }
+
+    .dropOpen{
+        border-radius: 10px 100px 10px 10px;
+        transition: 0.3s;
+
+    }
+
+
+</style>
+
+
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark py-4">
+            <div id="linksAlinhamento" class="container">
+              <a class="navbar-brand" href="#">
+                <img id="logo" src="assets/images/logo/logo_SENAI_negativa.png" alt="">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#bannerSobreNos">Quem é o SENAI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#bannerCursos">Cursos e certificações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#bannerInfraestrutura">Infraestrutura</a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <main class="d-flex flex-column align-items-center gap-3">
+        <!-- SEÇÃO SOBRE SENAI -->
+        <section class="container d-flex flex-column align-items-center justify-content-center p-0">
+            <!-- BANNER SESSÃO SENAI -->
+            <div id="bannerSobreNos" class="banner container-fluid rounded shadow my-3 p-0 bg-light">
+                <div class="bannerEfeito h-100 d-flex align-items-end rounded px-5 py-3">
+                    <h1 class="textoBanner">QUEM É O SENAI</h1>
+                </div>
+            </div>
+
+            <!-- TEXTO SOBRE SENAI -->
+            <div class="container shadow rounded gap-0 gap-md-4 gap-lg-4 p-5 m-3 bg-light d-flex flex-column flex-md-row flex-lg-row">
+                <aside class="w-100 w-md-50 w-lg-50">
+                    <p>O Serviço Nacional de Aprendizagem Industrial (SENAI) é uma das maiores instituições de educação profissional e tecnologia da América Latina. Fundado em 1942, o SENAI tem como missão promover a inovação e a qualificação profissional para a indústria brasileira, contribuindo para o desenvolvimento econômico e social do país.</p>
+                    <p>Com unidades em todo o Brasil, oferecemos cursos técnicos, de aperfeiçoamento, graduação e pós-graduação, além de serviços de tecnologia e inovação para empresas de diversos setores. Nosso compromisso é formar profissionais altamente capacitados, conectados com as demandas do mercado de trabalho e preparados para os desafios da Indústria 4.0.</p>
+                </aside>
+                <aside class="w-100 w-md-50 w-lg-50">
+                    <p>No SENAI, acreditamos que a educação transforma vidas e impulsiona o crescimento da indústria. Por isso, investimos constantemente em infraestrutura, tecnologia e metodologias de ensino inovadoras, garantindo um aprendizado de qualidade e alinhado às tendências do setor produtivo.</p>
+                    <p>Junte-se a nós e faça parte dessa revolução no conhecimento e na tecnologia!</p>
+                </aside>
+            </div>
+        </section>
+        
+
+        <!-- SEÇÃO SOBRE CURSO -->
+        <section id="curso" class="container-fluid d-flex flex-column align-items-center justify-content-center p-0">
+            <!-- BANNER CURSOS -->
+            <div id="bannerCursos" class="banner container rounded shadow my-3 p-0 bg-light">
+                <div class="bannerEfeito h-100 d-flex align-items-end rounded px-5 py-3">
+                    <h1 class="textoBanner">CURSOS E CERTIFICAÇÕES</h1>
+                </div>
+            </div>
+            
+            <section class="container row my-3 p-0">
+                <!-- COMPONENTE PARA CADA ÁREA -->
+                <section class="container-fluid p-0 m-0">
+                    <h1 class="textoPrimario">#area</h1>
+                    <!-- OPÇÕES -->
+                    <div class="container-fluid d-flex flex-column gap-3 m-0 my-3 p-0">
+                        <!-- APERFEIÇOAMENTO -->
+                        <button type="button" class="btn bgButtonPrimario dropBtn dropClose" data-bs-toggle="collapse" data-bs-target="#aperfeicoamentoCollapse">Aperfeiçoamento</button>
+                        <!-- CURSOS APERFEIÇOAMENTO -->
+                        <div class="collapse border-0" id="aperfeicoamentoCollapse">
+                            <div class="card card-body border-0">
+                              <div class="container-fluid m-0 p-0 d-flex gap-3 flex-wrap">
+                                <!-- COMPONENTE PARA BOTÃO DE CADA CURSO DE APERFIÇOAMENTO -->
+                                <button type="button" class="btn btnCurso" data-bs-toggle="modal" data-bs-target="#aperfeicoamentoModal">#nomeCurso</button>
+                                <!-- COMPONENTE PARA MODAL DE CADA CURSO DE APERFIÇOAMENTO -->
+                                <div class="modal modal-lg fade" id="aperfeicoamentoModal" tabindex="-1" aria-labelledby="aperfeicoamentoModal" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <!-- INFOS SOBRE CURSO -->
+                                        <div class="modal-body border-0 my-3 p-5 d-flex flex-column flex-md-column flex-lg-row justify-content-between gap-sm-2 gap-md-2 gap-lg-0">
+                                            <aside class="border-end w-100 w-md-50 w-lg-50 d-flex flex-column justify-content-center">
+                                                <div id="todasInfos" class="container-fluid p-0 m-0 flex-column gap-2 ">
+                                                    <ul class="w-100">
+                                                        <li>
+                                                            <!-- Curso -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Curso : </h6>
+                                                                <p><span>#title</span></p>
+                                                            </div>  
+                                                        </li>
+                                                        <li>
+                                                            <!-- Eixo Tecnologico -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Eixo Tecnologico : </h6>
+                                                                <p><span>#eixoTecnologicoValue</span></p>
+                                                            </div>  
+                                                        </li>
+                                                        <li>
+                                                            <!-- Carga horaria -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Carga horaria  : </h6>
+                                                                <p><span>#cargaHoraria</span> h</p>
+                                                            </div> 
+                                                        </li>
+                                                        <li>
+                                                            <!-- Metodologia -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Metodologia  : </h6>
+                                                                <p><span>#formato</span></p>
+                                                            </div>   
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </aside>
+                                            <!-- SOBRE O CURSO -->
+                                            <aside class="w-100 w-md-50 w-lg-50 d-flex flex-column justify-content-center align-items-center">
+                                                <p>#objetivoGeral</p>
+                                            </aside>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <!-- QUALIFICAÇÃO -->
+                        <button type="button" class="btn bgButtonPrimario dropBtn dropClose" data-bs-toggle="collapse" data-bs-target="#qualificacaoCollapse">Qualificação</button>
+                        <!-- CURSOS QUALIFICAÇÃO -->
+                        <div class="collapse border-0" id="qualificacaoCollapse">
+                            <div class="card card-body border-0">
+                              <div class="container-fluid m-0 p-0 d-flex gap-3 flex-wrap">
+                                <!-- COMPONENTE PARA BOTÃO DE CADA CURSO DE QUALIFICAÇÃO -->
+                                <button type="button" class="btn btnCurso" data-bs-toggle="modal" data-bs-target="#qualificacaoModal">#nomeCurso</button>
+                                <!-- COMPONENTE PARA MODAL DE CADA CURSO DE QUALIFICAÇÃO -->
+                                <div class="modal modal-lg fade" id="qualificacaoModal" tabindex="-1" aria-labelledby="qualificacaoModal" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <!-- INFOS SOBRE CURSO -->
+                                        <div class="modal-body border-0 my-3 p-5 d-flex flex-column flex-md-column flex-lg-row justify-content-between gap-sm-2 gap-md-2 gap-lg-0">
+                                            <aside class="border-end w-100 w-md-50 w-lg-50 d-flex flex-column justify-content-center">
+                                                <div id="todasInfos" class="container-fluid p-0 m-0 flex-column gap-2">
+                                                    <ul class="w-100">
+                                                        <li>
+                                                            <!-- Curso -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Curso : </h6>
+                                                                <p><span>#title</span></p>
+                                                            </div>  
+                                                        </li>
+                                                        <li>
+                                                            <!-- Eixo Tecnologico -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Eixo Tecnologico : </h6>
+                                                                <p><span>#eixoTecnologicoValue</span></p>
+                                                            </div>  
+                                                        </li>
+                                                        <li>
+                                                            <!-- Carga horaria -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Carga horaria  : </h6>
+                                                                <p><span>#cargaHoraria</span> h</p>
+                                                            </div> 
+                                                        </li>
+                                                        <li>
+                                                            <!-- Metodologia -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Metodologia  : </h6>
+                                                                <p><span>#formato</span></p>
+                                                            </div>   
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </aside>
+                                            <!-- SOBRE O CURSO -->
+                                            <aside class="w-100 w-md-50 w-lg-50 d-flex flex-column justify-content-center align-items-center">
+                                                <p>#objetivoGeral</p>
+                                            </aside>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <!-- TÉCNICO -->
+                        <button type="button" class="btn bgButtonPrimario dropBtn dropClose" data-bs-toggle="collapse" data-bs-target="#tecnicoCollapse">Técnico</button>
+                        <!-- CURSOS TÉCNICO -->
+                        <div class="collapse border-0" id="tecnicoCollapse">
+                            <div class="card card-body border-0">
+                              <div class="container-fluid m-0 p-0 d-flex gap-3 flex-wrap">
+                                <!-- COMPONENTE PARA BOTÃO DE CADA CURSO DE TÉCNICO -->
+                                <button type="button" class="btn btnCurso" data-bs-toggle="modal" data-bs-target="#tecnicoModal">#nomeCurso</button>
+                                <!-- COMPONENTE PARA MODAL DE CADA CURSO DE TÉCNICO -->
+                                <div class="modal modal-lg fade" id="tecnicoModal" tabindex="-1" aria-labelledby="tecnicoModal" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <!-- INFOS SOBRE CURSO -->
+                                        <div class="modal-body border-0 my-3 p-5 d-flex flex-column flex-md-column flex-lg-row justify-content-between gap-sm-2 gap-md-2 gap-lg-0">
+                                            <aside class="border-end w-100 w-md-50 w-lg-50 d-flex flex-column justify-content-center">
+                                                <div id="todasInfos" class="container-fluid p-0 m-0 flex-column gap-2">
+                                                    <ul class="w-100">
+                                                        <li>
+                                                            <!-- Curso -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Curso : </h6>
+                                                                <p><span>#title</span></p>
+                                                            </div>  
+                                                        </li>
+                                                        <li>
+                                                            <!-- Eixo Tecnologico -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Eixo Tecnologico : </h6>
+                                                                <p><span>#eixoTecnologicoValue</span></p>
+                                                            </div>  
+                                                        </li>
+                                                        <li>
+                                                            <!-- Carga horaria -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Carga horaria  : </h6>
+                                                                <p><span>#cargaHoraria</span> h</p>
+                                                            </div> 
+                                                        </li>
+                                                        <li>
+                                                            <!-- Metodologia -->
+                                                            <div class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
+                                                                <h6>Metodologia  : </h6>
+                                                                <p><span>#formato</span></p>
+                                                            </div>   
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </aside>
+                                            <!-- SOBRE O CURSO -->
+                                            <aside class="w-100 w-md-50 w-lg-50 d-flex flex-column justify-content-center align-items-center">
+                                                <p>#objetivoGeral</p>
+                                            </aside>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+
+         <!-- SEÇÃO SOBRE INSFRAESTRUTURA -->
+         <section class="container d-flex flex-column align-items-center justify-content-center p-0 my-3">
+            <div class="container p-0">  
+                <!-- BANNER INSFRAESTRUTURA -->
+                    <div id="bannerInfraestrutura" class="banner container-fluid rounded shadow mt-3 mb-5 p-0 bg-light">
+                        <div class="bannerEfeito h-100 d-flex align-items-end rounded px-5 py-3">
+                            <h1 class="textoBanner">INFRAESTRUTURA</h1>
+                        </div>
+                    </div>
+
+                    <section id="componentesInsfraestrutura" class="container-fluid p-0 gap-3 d-flex flex-column justify-content-between">
+                        <!-- COMPONENTE PARA CADA INFRAESTRUTURA -->
+                        <div class="container p-0">
+                            <h2 class="textoPrimario">LABORATÓRIOS</h2>
+                            <!-- INFOS -->
+                            <div class="container justify-content-between d-flex flex-column-reverse flex-md-column-reverse flex-lg-row gap-4 gap-md-0 gap-lg-0 p-0 py-2 m-0">
+                                <aside class="w-100 w-md-50 w-lg-50 me-5">
+                                    <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column">
+                                        <p>O SENAI Taguatinga conta com uma infraestrutura de ponta, composta por diversos laboratórios especializados e bem estruturados, que atendem às necessidades de formação prática dos alunos. Cada espaço é projetado para fornecer um ambiente de aprendizado dinâmico, com tecnologias avançadas que simulam as condições reais de trabalho nas mais variadas áreas da indústria.</p>
+                                        <p>A estrutura do SENAl não se limita a equipamentos de alta tecnologia, mas também inclui áreas de convivência e recursos pedagógicos, como bibliotecas especializadas e espaços de estudo, que complementam a formação dos alunos. Esse conjunto de recursos contribui para que a formação oferecida seja não apenas técnica, mas também abrangente, preparando os estudantes para desafios variados dentro do mercado de trabalho.</p>
+                                    </div>
+                                </aside>
+                               
+                                <aside class="w-100 w-md-50 w-lg-50 d-flex align-items-center">
+                                    <div class="w-100 m-0 p-0 ms-1">
+                                        <img class="w-100" src="assets/images/fotos/lab.svg" alt="">
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                         <!-- COMPONENTE PARA CADA INFRAESTRUTURA -->
+                         <div class="container p-0">
+                            <!-- INFOS -->
+                            <div class="container justify-content-between d-flex flex-column flex-md-column flex-lg-row p-0 py-2 m-0 gap-4 gap-md-0 gap-lg-0 ">
+                                
+                                <aside class="w-100 w-md-50 w-lg-50 d-flex align-items-center">
+                                    <div class="w-100 m-0 p-0 me-1">
+                                        <img class="w-100" src="assets/images/fotos/lab2.svg" alt="">
+                                    </div>
+                                </aside>
+                            
+                                <aside class="w-100 w-md-50 w-lg-50 ms-0 ms-md-5 ms-lg-5">
+                                    <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column">
+                                        <p>Os laboratórios do SENAl Taguatinga foram planejados para atender uma quantidade específica de alunos, garantindo um aprendizado personalizado e eficiente. Cada espaço é cuidadosamente dimensionado para que todos os alunos possam usufruir do ambiente com conforto, sem sobrecarga, permitindo a realização de atividades práticas com maior atenção dos instrutores.</p>
+                                        <p>A organização dos laboratórios favorece o desenvolvimento de atividades colaborativas, simulando situações reais de trabalho em equipe. A capacidade de atendimento de cada espaço foi pensada para oferecer qualidade no ensino e acompanhar as necessidades de cada aluno, resultando em uma formação técnica de alto nível.</p>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container-fluid text-light d-flex flex-sm-column flex-md-column flex-lg-row justify-content-around align-items-center gap-3 p-3">
+        <img src="assets/images/logo/SENAI_sem_assinatura_negativa.svg" alt="">
+        <div class="d-flex gap-5">
+            <div class="d-flex gap-3 100-h align-items-center">
+                <i class="bi bi-telephone-fill"></i>
+                <p class="m-0 p-0">Sac Sistema Fibra (61) 4042 6565</p>
+            </div>
+            <div class="d-flex gap-3 100-h align-items-center">
+                <i class="bi bi-clock-fill"></i>
+                <span>
+                    <p class="m-0 p-0">Horário de Atendimento: </p>
+                    <p class="m-0 p-0">De segunda a Sexta-feira / das 8h às 18h </p>
+                </span>
+            </div>
+            <div class="d-flex gap-3 100-h align-items-center">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>
+                    <p class="m-0 p-0">Brasília - DF - CEP:71200-030</p>
+                    <p class="m-0 p-0">SIA Trecho 3, lote 225 Ed.Sede Senai</p>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $('.dropBtn').on('click',function(){
+            if($(this).hasClass('dropClose')){
+                $(this).toggleClass('dropOpen','dropClose');
+
+            }else{
+                $(this).toggleClass('dropClose','dropOpen');
+
+            }
+            
+        });
+    </script>
+</body>
+</html>
