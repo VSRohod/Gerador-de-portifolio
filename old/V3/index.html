@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENAI</title>
+    <!-- ICON -->
     <link rel="shortcut icon" href="assets/images/logo/thumbnail_icone.png" type="image/x-icon">
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="https://fonts.cdnfonts.com/css/neo-sans-pro" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- FONTS -->
+    <link href="https://fonts.cdnfonts.com/css/neo-sans-pro" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <style>
     /* configurações gerais */
@@ -17,12 +23,14 @@
     }
 
     :root{
-        --fontePrimaria : 'Neo Sans Pro' ;
-        --azulEscuro : #164194 ;
-        --azulClaro : #008BD2 ;
+        --fontePrimaria : 'Neo Sans Pro'  ;
+        --fonteSecundaria : 'Outfit' ;
+        --azulEscuro : #1A4B9F ;
+        --azulClaro : #59A2D9 ;
         --verdeAgua : #6CC2BA ;
         --verde : #52AE32 ;
         --laranja : #E84910 ;
+        --rosa : #E7ACCE ;
         --light : #f8f8f8;
         --transparente: #e5080800 ; 
         --pretoTransparente: rgba(0, 0, 0, 0.705);
@@ -47,7 +55,7 @@
     /* classe para a cor da fonte primaria */
     .textoPrimario{
         color: var(--azulEscuro);
-        font-family: var(--fontePrimaria);
+        font-family: var(--fonteSecundaria);
         font-weight: bold;
 
     }
@@ -89,7 +97,7 @@
     }
 
     .border-end{
-        border-color: var(--azulEscuro)!important;
+        border-color: var(--transparente)!important;
     }
 
     /* header e footer */
@@ -168,7 +176,7 @@
             font-weight: bold;
             background-image: none;
             background-color: var(--azulEscuro);
-    }
+        }
     }
 
     /* js */
@@ -183,7 +191,12 @@
 
     }
 
-
+    /* breakpoints */
+    @media screen and (min-width: 992px) {
+        .border-end{
+            border-color: var(--azulEscuro)!important;
+        }
+    }
 </style>
 
 
@@ -467,7 +480,7 @@
                         <div class="container p-0">
                             <h2 class="textoPrimario">LABORATÓRIOS</h2>
                             <!-- INFOS -->
-                            <div class="container justify-content-between d-flex flex-column-reverse flex-md-column-reverse flex-lg-row gap-4 gap-md-0 gap-lg-0 p-0 py-2 m-0">
+                            <div class="container justify-content-between d-flex flex-column-reverse flex-md-column-reverse flex-lg-row gap-4 gap-md-4 gap-lg-0 p-0 py-2 m-0">
                                 <aside class="w-100 w-md-50 w-lg-50 me-5">
                                     <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column">
                                         <p>O SENAI Taguatinga conta com uma infraestrutura de ponta, composta por diversos laboratórios especializados e bem estruturados, que atendem às necessidades de formação prática dos alunos. Cada espaço é projetado para fornecer um ambiente de aprendizado dinâmico, com tecnologias avançadas que simulam as condições reais de trabalho nas mais variadas áreas da indústria.</p>
@@ -485,7 +498,7 @@
                          <!-- COMPONENTE PARA CADA INFRAESTRUTURA -->
                          <div class="container p-0">
                             <!-- INFOS -->
-                            <div class="container justify-content-between d-flex flex-column flex-md-column flex-lg-row p-0 py-2 m-0 gap-4 gap-md-0 gap-lg-0 ">
+                            <div class="container justify-content-between d-flex flex-column flex-md-column flex-lg-row gap-4 gap-md-4 gap-lg-0 p-0 py-2 m-0">
                                 
                                 <aside class="w-100 w-md-50 w-lg-50 d-flex align-items-center">
                                     <div class="w-100 m-0 p-0 me-1">
@@ -493,7 +506,7 @@
                                     </div>
                                 </aside>
                             
-                                <aside class="w-100 w-md-50 w-lg-50 ms-0 ms-md-5 ms-lg-5">
+                                <aside class="w-100 w-md-50 w-lg-50 ms-0 ms-md-0 ms-lg-5">
                                     <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column">
                                         <p>Os laboratórios do SENAl Taguatinga foram planejados para atender uma quantidade específica de alunos, garantindo um aprendizado personalizado e eficiente. Cada espaço é cuidadosamente dimensionado para que todos os alunos possam usufruir do ambiente com conforto, sem sobrecarga, permitindo a realização de atividades práticas com maior atenção dos instrutores.</p>
                                         <p>A organização dos laboratórios favorece o desenvolvimento de atividades colaborativas, simulando situações reais de trabalho em equipe. A capacidade de atendimento de cada espaço foi pensada para oferecer qualidade no ensino e acompanhar as necessidades de cada aluno, resultando em uma formação técnica de alto nível.</p>
@@ -506,9 +519,9 @@
         </section>
     </main>
 
-    <footer class="container-fluid text-light d-flex flex-sm-column flex-md-column flex-lg-row justify-content-around align-items-center gap-3 p-3">
+    <footer class="container-fluid text-light d-flex justify-content-around align-items-center gap-3 p-3">
         <img src="assets/images/logo/SENAI_sem_assinatura_negativa.svg" alt="">
-        <div class="d-flex gap-5">
+        <div class="d-flex gap-5 flex-column flex-md-column flex-lg-row ">
             <div class="d-flex gap-3 100-h align-items-center">
                 <i class="bi bi-telephone-fill"></i>
                 <p class="m-0 p-0">Sac Sistema Fibra (61) 4042 6565</p>
