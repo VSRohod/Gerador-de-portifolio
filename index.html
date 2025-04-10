@@ -29,6 +29,7 @@
         --fonteSecundaria: 'Outfit';
         --azulEscuro: #1a4b9f;
         --azulClaro: #59A2D9;
+        --azulPopUp: #000930 ;
         --verdeAgua: #6CC2BA;
         --verde: #52AE32;
         --laranja: #E84910;
@@ -39,13 +40,10 @@
         --pretoTransparente: rgba(0, 0, 0, 0.705);
     }
 
-    h1 img {
+    .tituloIcon {
         width: 2rem;
-    }
-
-    h1 {
-        display: flex;
-        gap: 20px;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     li::marker {
@@ -60,12 +58,22 @@
         background-color: var(--transparente);
     }
 
+    .badge{
+        margin: 5px;
+        font-size: 12pt ;
+    }
+
     /* classe para a cor da fonte primaria */
     .textoPrimario {
         color: var(--azulEscuro);
         font-family: var(--fonteSecundaria);
         font-weight: bold;
+    }
 
+    .textoPrimarioBranco {
+        color: var(--light);
+        font-family: var(--fonteSecundaria);
+        font-weight: bold;
     }
 
     .btnCurso {
@@ -123,8 +131,11 @@
 
     }
 
+    #cadastrar{
+        background-image: url(assets/images/banner/Fundo.jpg);
+    }
+
     footer {
-        background-color: var(--azulEscuro);
         font-family: var(--fontePrimariaItalico);
     }
 
@@ -154,27 +165,34 @@
     }
 
     /* banner config */
-    .banner {
+    .bannerParallax {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
         justify-content: center;
-        height: 14rem;
     }
 
-    #banner {
+    .banner{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #banner{
+        height: 100%;
+        width: 100%;
+    }
+
+    #bannerCover{
         color: var(--light);
-        background-image: url(assets/images/banner/Fundo.jpg);
-        height: 550px;
+        background-image: url(assets/images/banner/Fundo2.png);
+        height: 100%;
+        background-size: cover ;
     }
 
-    #banner div {
+    #bannerCover div {
         width: 50%;
-    }
-
-    #bannerSobreNos img {
-        height: 90%;
     }
 
     #bannerTextoAside {
@@ -232,14 +250,28 @@
     }
 
     @media screen and (max-width: 1020px) {
-        #banner{
+        #bannerCover{
             height: auto;
             flex-direction: column!important;
+            background-image: none;
         }
 
         #bannerSobreNos{
             width: 100%!important;
+            height: 500px!important;
             margin: 0%;
+            background-image: url(assets/images/banner/bannerImg.png)!important;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+        }
+
+        #bannerBg{
+            background-image: url(assets/images/banner/Fundo.jpg)!important;
+            background-position: cover;
+        }
+
+        #bannerDiv{
+            background-image: none!important;
         }
 
         #bannerSobreNos img{
@@ -249,7 +281,69 @@
         #bannerTexto{
             padding-bottom: 100px;
         }
+
+        #gradient{
+            height: auto!important;
+        }
     }
+
+    /* parallax */
+    #bannerBg{
+        background-image: url(assets/images/parallaxBanner/IMG_Fundo.jpg);
+        height: 100%;
+    }
+
+    #bannerDiv{
+        width: 100%;
+        height: 34px;
+    }
+
+    #gradient{
+        background-image: url(assets/images/banner/Fundo.jpg)!important;
+        height: 550px;
+    }
+
+    #bannerInfraestruturaEfeito{
+        width: 100%;
+        background-image: url(assets/images/banner/efeitoInfra.png);
+        background-size: 100% auto;
+        background-position: bottom;
+    }
+
+    #bannerInfraestrutura h2{
+        margin-bottom: 100px;
+    }
+
+    #cadastrar{
+        margin-top: -60px;
+        background-image: url(assets/images/banner/gradientFooter.jpg);
+        z-index: -10;
+    }
+
+    #componentesInsfraestrutura p{
+       color: var(--azulEscuro);
+       font-weight: bold;
+        font-size: 11pt!important ;
+    }
+
+    #labsImgs{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    #logoInfra{
+        width: 10rem;
+    }
+
+    #qrCode .modal-content{
+        background-color: var(--azulPopUp)!important;
+    }
+
+    #detalhesInfraestrutura{
+        background-color: #000930;
+        border-radius: 1rem!important;
+    }
+
 </style>
 
 
@@ -288,28 +382,34 @@
 
     <main class="d-flex flex-column align-items-center gap-3">
         <!-- SEÇÃO SOBRE SENAI -->
-        <section id="banner"
-            class="container-fluid justify-content-between align-items-between d-flex flex-column flex-md-row flex-lg-row gap-4 gap-md-4 gap-lg-0 p-0 m-0">
-            <!-- BANNER SESSÃO SENAI -->
-            <div id="bannerSobreNos" class="h-100 banner container p-0">
-                <img src="assets/images/banner/bannerImg.png" alt="">
-            </div>
+        <div id="gradient" class="banner container-fluid p-0">
+            <section id="bannerBg" class="bannerParallax container-fluid p-0">
+                <div id="banner" class="container-fluid p-0">
+                    <div id="bannerCover" class="banner container-fluid justify-content-between align-items-between d-flex flex-column flex-md-row flex-lg-row gap-4 gap-md-4 gap-lg-0 p-0 m-0">
+                        <!-- BANNER SESSÃO SENAI -->
+                        <div id="bannerSobreNos" class="h-100 container p-0">
 
-            <!-- TEXTO SOBRE SENAI -->
-            <div id="bannerTexto"
-                class="container h-100 d-flex justify-content-center flex-column flex-md-column flex-lg-column align-items-center">
-                <aside>
-                    <h1>QUEM É O SENAI <img src="assets/icons/code.svg" alt=""> </h1>
-                </aside>
-                <aside id="bannerTextoAside">
-                    <p>No SENAI, acreditamos que a educação transforma vidas e impulsiona o crescimento da indústria.
-                        Por isso, investimos constantemente em infraestrutura, tecnologia e metodologias de ensino
-                        inovadoras, garantindo um aprendizado de qualidade e alinhado às tendências do setor produtivo.
-                    </p>
-                    <p>Junte-se a nós e faça parte dessa revolução no conhecimento e na tecnologia!</p>
-                </aside>
-            </div>
-        </section>
+                        </div>
+
+                        <!-- TEXTO SOBRE SENAI -->
+                        <div id="bannerTexto"
+                            class="container h-100 d-flex justify-content-center flex-column flex-md-column flex-lg-column align-items-center">
+                            <aside>
+                                <h1>QUEM É O SENAI <img class="tituloIcon" src="assets/icons/code.svg" alt=""> </h1>
+                            </aside>
+                            <aside id="bannerTextoAside">
+                                <p>No SENAI, acreditamos que a educação transforma vidas e impulsiona o crescimento da indústria.
+                                    Por isso, investimos constantemente em infraestrutura, tecnologia e metodologias de ensino
+                                    inovadoras, garantindo um aprendizado de qualidade e alinhado às tendências do setor produtivo.
+                                </p>
+                                <p>Junte-se a nós e faça parte dessa revolução no conhecimento e na tecnologia!</p>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+                <div id="bannerDiv" class="banner"></div>
+            </section>
+        </div>
 
 
         <!-- SEÇÃO SOBRE CURSO -->
@@ -380,8 +480,8 @@
                                                                     <!-- Metodologia -->
                                                                     <div
                                                                         class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
-                                                                        <h6>Metodologia : </h6>
-                                                                        <p><span>#formato</span></p>
+                                                                        <h6>Formato : </h6>
+                                                                        <p><span class="badge text-bg-primary">#formato</span></p>
                                                                     </div>
                                                                 </li>
                                                             </ul>
@@ -457,8 +557,8 @@
                                                                     <!-- Metodologia -->
                                                                     <div
                                                                         class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
-                                                                        <h6>Metodologia : </h6>
-                                                                        <p><span>#formato</span></p>
+                                                                        <h6>Formato : </h6>
+                                                                        <p><span class="badge text-bg-primary">#formato</span></p>
                                                                     </div>
                                                                 </li>
                                                             </ul>
@@ -533,8 +633,8 @@
                                                                     <!-- Metodologia -->
                                                                     <div
                                                                         class="container-fluid p-0 m-0 informacaoCurso d-flex flex-column ">
-                                                                        <h6>Metodologia : </h6>
-                                                                        <p><span>#formato</span></p>
+                                                                        <h6>Formato : </h6>
+                                                                        <p><span class="badge text-bg-primary">#formato</span></p>
                                                                     </div>
                                                                 </li>
                                                             </ul>
@@ -560,98 +660,84 @@
  
         <!-- SEÇÃO SOBRE INSFRAESTRUTURA -->
          <!-- BANNER INSFRAESTRUTURA -->
-        <div id="bannerInfraestrutura" class="banner container-fluid d-flex align-items-end justify-content-start mb-5 p-0">
-            <h2 class="textoPrimario m-5">LABORATÓRIOS</h2>
-        </div>
-        <section class="container d-flex flex-column align-items-center justify-content-center p-0 my-3">
-            <div class="container p-0">
-                <section id="componentesInsfraestrutura"
-                    class="container-fluid p-0 gap-3 d-flex flex-column justify-content-between">
-                    <!-- COMPONENTE PARA CADA INFRAESTRUTURA -->
-                    <div class="container p-0">
-                        <!-- INFOS -->
-                        <div
-                            class="container justify-content-between d-flex flex-column-reverse flex-md-column-reverse flex-lg-row gap-4 gap-md-4 gap-lg-0 p-0 py-2 m-0">
-                            <aside class="w-100 w-md-50 w-lg-50 me-5">
-                                <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column">
-                                    <p>O SENAI Taguatinga conta com uma infraestrutura de ponta, composta por diversos
-                                        laboratórios especializados e bem estruturados, que atendem às necessidades de
-                                        formação prática dos alunos. Cada espaço é projetado para fornecer um ambiente
-                                        de aprendizado dinâmico, com tecnologias avançadas que simulam as condições
-                                        reais de trabalho nas mais variadas áreas da indústria.</p>
-                                    <p>A estrutura do SENAl não se limita a equipamentos de alta tecnologia, mas também
-                                        inclui áreas de convivência e recursos pedagógicos, como bibliotecas
-                                        especializadas e espaços de estudo, que complementam a formação dos alunos. Esse
-                                        conjunto de recursos contribui para que a formação oferecida seja não apenas
-                                        técnica, mas também abrangente, preparando os estudantes para desafios variados
-                                        dentro do mercado de trabalho.</p>
-                                </div>
-                            </aside>
-
-                            <aside class="w-100 w-md-50 w-lg-50 d-flex align-items-center">
-                                <div class="w-100 m-0 p-0 ms-1">
-                                    <img class="w-100" src="assets/images/fotos/lab.svg" alt="">
-                                </div>
-                            </aside>
-                        </div>
-                    </div>
-                    <!-- COMPONENTE PARA CADA INFRAESTRUTURA -->
-                    <div class="container p-0">
-                        <!-- INFOS -->
-                        <div
-                            class="container justify-content-between d-flex flex-column flex-md-column flex-lg-row gap-4 gap-md-4 gap-lg-0 p-0 py-2 m-0">
-
-                            <aside class="w-100 w-md-50 w-lg-50 d-flex align-items-center">
-                                <div class="w-100 m-0 p-0 me-1">
-                                    <img class="w-100" src="assets/images/fotos/lab2.svg" alt="">
-                                </div>
-                            </aside>
-
-                            <aside class="w-100 w-md-50 w-lg-50 ms-0 ms-md-0 ms-lg-5">
-                                <div class="shadow rounded p-5 m-0 bg-light d-flex flex-column">
-                                    <p>Os laboratórios do SENAl Taguatinga foram planejados para atender uma quantidade
-                                        específica de alunos, garantindo um aprendizado personalizado e eficiente. Cada
-                                        espaço é cuidadosamente dimensionado para que todos os alunos possam usufruir do
-                                        ambiente com conforto, sem sobrecarga, permitindo a realização de atividades
-                                        práticas com maior atenção dos instrutores.</p>
-                                    <p>A organização dos laboratórios favorece o desenvolvimento de atividades
-                                        colaborativas, simulando situações reais de trabalho em equipe. A capacidade de
-                                        atendimento de cada espaço foi pensada para oferecer qualidade no ensino e
-                                        acompanhar as necessidades de cada aluno, resultando em uma formação técnica de
-                                        alto nível.</p>
-                                </div>
-                            </aside>
-                        </div>
-                    </div>
-                </section>
+        <div id="bannerInfraestrutura" class="banner container-fluid p-0">
+            <div id="bannerInfraestruturaEfeito" class="banner h-100 container-fluid d-flex align-items-end justify-content-start mb-5 p-0">
+                <h2 class="textoPrimarioBranco mx-5">LABORATÓRIOS <img class="tituloIcon" src="assets/icons/pc.svg" alt=""></h2>
             </div>
-        </section>
+        </div>
+        
     </main>
 
-    <footer class="container-fluid text-light d-flex justify-content-around align-items-center gap-3 p-3">
-        <img src="assets/images/logo/SENAI_sem_assinatura_negativa.svg" alt="">
-        <div class="d-flex gap-5 flex-column flex-md-column flex-lg-row ">
-            <div class="d-flex gap-3 100-h align-items-center">
-                <i class="bi bi-telephone-fill"></i>
-                <p class="m-0 p-0">Sac Sistema Fibra (61) 4042 6565</p>
-            </div>
-            <div class="d-flex gap-3 100-h align-items-center">
-                <i class="bi bi-clock-fill"></i>
-                <span>
-                    <p class="m-0 p-0">Horário de Atendimento: </p>
-                    <p class="m-0 p-0">De segunda a Sexta-feira / das 8h às 18h </p>
-                </span>
-            </div>
-            <div class="d-flex gap-3 100-h align-items-center">
-                <i class="bi bi-geo-alt-fill"></i>
-                <span>
-                    <p class="m-0 p-0">Brasília - DF - CEP:71200-030</p>
-                    <p class="m-0 p-0">SIA Trecho 3, lote 225 Ed.Sede Senai</p>
-                </span>
-            </div>
+    <section id="detalhesInfraestrutura" class="container-fluid d-flex flex-column align-items-center justify-content-center p-5 my-3">
+        <div class="container-fluids p-0">
+            <section id="componentesInsfraestrutura"
+                class="container-fluid p-0 gap-3 d-flex flex-column align-items-center justify-content-center">
+                <img id="labsImgs" src="assets/images/fotos/labs.png" alt="">
+                <p>O SENAI Taguatinga conta com uma infraestrutura de ponta, composta por diversos
+                    laboratórios especializados e bem estruturados, que atendem às necessidades de
+                    formação prática dos alunos. Cada espaço é projetado para fornecer um ambiente
+                    de aprendizado dinâmico, com tecnologias avançadas que simulam as condições
+                    reais de trabalho nas mais variadas áreas da indústria.</p>
+                <img id="logoInfra" src="assets/images/logo/thumbnail_SENAI_sem_assinatura_cor.png" alt="">
+            </section>
         </div>
-    </footer>
+    </section>
 
+    <section id="cadastrar" class="container-fluid banner p-0">
+        <div class="container-fluid p-0 m-0 py-5 d-flex justify-content-center align-items-center flex-column gap-4">
+            <h1 class="textoPrimarioBranco mt-5">PRONTO PARA DAR O PRÓXIMO PASSO?</h1>
+            <p class="textoPrimarioBranco">
+                Cadastra-se para ser o primeiro a saber sobre as novas turmas e oportunidades que vêm por aí.
+            </p>
+
+            <!-- BOTÃO PARA TELA DO QR CODE -->
+            <button type="button" class="btn btn-light my-3" data-bs-toggle="modal" data-bs-target="#qrCode">
+                <h5 class="m-0 p-0">CADASTRE-SE</h5>
+            </button>
+
+             <!-- COMPONENTE PARA MODAL DO QR -->
+             <div class="modal modal-lg fade" id="qrCode" tabindex="-1"
+             aria-labelledby="qrCode" aria-hidden="true">
+             <div class="modal-dialog modal-dialog-centered">
+                 <div class="modal-content">
+                     <!-- INFOS SOBRE QR -->
+                     <div class="modal-body border-0 d-flex justify-content-center flex-column align-items-center">
+                       <img src="assets/images/qr/cadastro.png" alt="">
+                       <a href="https://docs.google.com/forms/d/e/1FAIpQLScrJKuFiUMflVjvr4aOpK9Ep_ud5ELchoNBbO-kY3HTWT8KUA/viewform" target="_blank">
+                            <button type="button" class="btn btn-light my-3">
+                                <h5 class="m-0 p-0">LINK</h5>
+                            </button>
+                        </a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+        </div>
+        <footer class="container-fluid text-light d-flex justify-content-around align-items-center gap-3 p-3">
+            <div class="d-flex gap-5 flex-column flex-md-column flex-lg-row ">
+                <div class="d-flex gap-3 100-h align-items-center">
+                    <i class="bi bi-telephone-fill"></i>
+                    <p class="m-0 p-0">Sac Sistema Fibra (61) 4042 6565</p>
+                </div>
+                <div class="d-flex gap-3 100-h align-items-center">
+                    <i class="bi bi-clock-fill"></i>
+                    <span>
+                        <p class="m-0 p-0">Horário de Atendimento: </p>
+                        <p class="m-0 p-0">De segunda a Sexta-feira / das 8h às 18h </p>
+                    </span>
+                </div>
+                <div class="d-flex gap-3 100-h align-items-center">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>
+                        <p class="m-0 p-0">Brasília - DF - CEP:71200-030</p>
+                        <p class="m-0 p-0">SIA Trecho 3, lote 225 Ed.Sede Senai</p>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
